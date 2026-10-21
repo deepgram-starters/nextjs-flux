@@ -21,7 +21,8 @@ nextApp.prepare().then(() => {
   const server = createServer((request, response) => handle(request, response));
   const wss = new WebSocketServer({ noServer: true });
   server.on("upgrade", (request, socket, head) => {
-    if (new URL(request.url, "http://localhost").pathname !== "/api/flux" || !verify((request.headers["sec-websocket-protocol"] || "").split(",").map((value) => value.trim()))) { socket.write("HTTP/1.1 401 Unauthorized\r\n\r\n"); socket.destroy(); return; }
+    if (new URL(request.url, "http://localhost").pathname !== "/api/flux") return;
+    if (!verify((request.headers["sec-websocket-protocol"] || "").split(",").map((value) => value.trim()))) { socket.write("HTTP/1.1 401 Unauthorized\r\n\r\n"); socket.destroy(); return; }
     wss.handleUpgrade(request, socket, head, (client) => wss.emit("connection", client, request));
   });
   wss.on("connection", async (client, request) => {

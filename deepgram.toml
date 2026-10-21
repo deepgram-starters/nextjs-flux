@@ -33,6 +33,10 @@ message = "Dependencies updated"
 command = ["rm -rf node_modules", "rm -rf .next"]
 message = "Build artifacts cleaned"
 
+[eject-frontend]
+command = "git submodule update --init --recursive"
+message = "Frontend reference and contracts initialized"
+
 [test]
 command = "corepack pnpm test"
 message = "Production build completed"
