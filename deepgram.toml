@@ -1,0 +1,38 @@
+[meta]
+title = "Next.js Flux"
+description = "Get started using Deepgram's Flux API for turn detection with this Next.js demo app"
+author = "Deepgram DX Team <devrel@deepgram.com> (https://developers.deepgram.com)"
+repository = "https://github.com/deepgram-starters/nextjs-flux"
+useCase = "flux"
+language = "javascript"
+framework = "nextjs"
+sdk = "@deepgram/sdk"
+tags = ["flux", "turn-detection", "real-time-transcription", "javascript", "nextjs"]
+
+[check]
+command = ["command -v git", "command -v node", "command -v pnpm"]
+message = "Prerequisites checked"
+
+[install]
+command = "corepack pnpm install"
+message = "Dependencies installed"
+
+[install.config]
+sample = "sample.env"
+output = ".env"
+
+[start]
+command = "corepack pnpm dev"
+message = "Application running on http://localhost:3000"
+
+[update]
+command = "corepack pnpm update"
+message = "Dependencies updated"
+
+[clean]
+command = ["rm -rf node_modules", "rm -rf .next"]
+message = "Build artifacts cleaned"
+
+[test]
+command = "corepack pnpm test"
+message = "Production build completed"

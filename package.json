@@ -1,0 +1,10 @@
+{
+  "name": "@deepgram/nextjs-flux",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Flux turn detection using Deepgram and Next.js",
+  "packageManager": "pnpm@10.0.0",
+  "engines": { "node": ">=24.0.0", "pnpm": ">=10.0.0" },
+  "scripts": { "dev": "node server.js", "build": "next build", "start": "NODE_ENV=production node server.js", "test": "next build" },
+  "dependencies": { "@deepgram/sdk": "^5.7.0", "next": "^16.3.0", "react": "^19.2.0", "react-dom": "^19.2.0", "ws": "^8.21.0" }
+}
